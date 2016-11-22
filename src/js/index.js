@@ -9,4 +9,8 @@ import Layout from './components/layout';
 
 const store = createStore(allReducers);
 
-ReactDOM.render(<Layout />, document.getElementById('app'));
+ReactDOM.render(
+	<Provider store= {store}>
+		<Layout />
+	</Provider>
+	, document.getElementById('app'));
