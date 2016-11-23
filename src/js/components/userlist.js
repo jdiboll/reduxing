@@ -5,23 +5,37 @@ import { connect } from 'react-redux';
 
  class Userlist extends Component {
 
-	render() {
+
+ 	createListItem() {
 		let users = this.props.users;
+
+
+ 		return this.props.users.map((user) => {
+ 			return(
+ 				<li key={user.id}>{user.name}: {user.age}</li>
+ 				)
+ 		});
+ 	}
+
+
+
+
+	render() {
 		return (
 			<ul>
-				<li>One</li>
-				<li>Two</li>
-				<li>Three</li>
-
+				{this.createListItem()}	
 			</ul>
 			);
 	};
 
 };
-function mapStateToProps(state) {
-	return {
-		users: state.users
-	};
 
-}
+	function mapStateToProps(state) {
+		return {
+			users: state.users
+		};
+
+	}
+
+
 export default connect(mapStateToProps)(Userlist);
