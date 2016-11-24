@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 		let users = this.props.users;
 
 
- 		return this.props.users.map((user) => {
+ 		return users.map((user) => {
  			return(
  				<li key={user.id}>{user.name}: {user.age}</li>
  				)
